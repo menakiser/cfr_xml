@@ -24,7 +24,7 @@ def read_xmlcontent(output_table, part_path, statutes_list):
     for _, row in statutes_list.iterrows():
         try:
             act_number = int(row["Act Number"])  # Convert act number to integer
-            usc_citation = str(row["USC Citation"])  # Ensure USC Citation is a string
+            usc_citation = str(row["USC Citation 2"])  # Ensure USC Citation is a string, ignore et seq. or note
 
             if 1 <= act_number <= 26 and pd.notna(usc_citation):
                 if re.search(re.escape(usc_citation), xml_content):
@@ -44,7 +44,7 @@ statutes_list = pd.read_csv('env_statutes.csv', skiprows=2)
 statutes_list.columns = statutes_list.iloc[0]
 statutes_list = statutes_list[1:].reset_index(drop=True)
 print(statutes_list.shape)
-print(statutes_list['USC Citation'])
+print(statutes_list['USC Citation 2'])
 
 # define output table
 USCcolumns = ["FileName", "FirstLine"] + [f"USCAct{str(i).zfill(2)}" for i in range(1, 27)]
@@ -52,9 +52,21 @@ USCtable = pd.DataFrame(columns=USCcolumns)
 print(USCtable)
 
 # looking at 2022 volume 1 for now. there are up to 15 volumes this year. 50 titles
-for focal_year in range(1975, 2023):
-    for focal_vol in range(1, 21):
+for focal_year in range(1997, 2022):
+    for focal_vol in range(1, 16):
         for focal_title in range(1, 51):
-            file_path = f"CFR{focal_year}/CFR{focal_year}-title{focal_title}-vol{focal_vol}"
-            USCtable = read_xmlcontent(USCtable, file_path, statutes_list)
-            USCtable.to_csv(f"CFR{focal_year}/USCtable{focal_year}.csv", index=False)
+           for focal_part in range(1, 246):
+                file_path = f"CFR-{focal_year}/title-{focal_title}/CFR-{focal_year}-title{focal_title}-vol{focal_vol}-part{focal_part}.xml"
+                USCtable = read_xmlcontent(USCtable, file_path, statutes_list)
+                USCtable.to_csv(f"CFR-{focal_year}/USCtable{focal_year}.csv", index=False)
+
+
+''''
+for focal_year in range(1997, 2022):
+    for focal_vol in range(1, 16):
+        for focal_title in range(1, 51):
+           for focal_part in range(1, 246):
+                file_path = f"CFR-{focal_year}/title-{focal_title}/CFR-{focal_year}-title{focal_title}-vol{focal_vol}-part{focal_part}.xml"
+                USCtable = read_xmlcontent(USCtable, file_path, statutes_list)
+                USCtable.to_csv(f"CFR-{focal_year}/USCtable{focal_year}.csv", index=False)
+''''
