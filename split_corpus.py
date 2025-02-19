@@ -37,13 +37,14 @@ def split_xml_file(file_path, delimiter):
         print(f"Created file: {output_file_path}")
 
 # execute for 2022
-focal_year = 2022
-for focal_vol in range(1, 21):
-    for focal_title in range(1, 51):
-        download_xml(focal_year, focal_title, focal_vol)
+for focal_year in range(1975, 2023):
+    for focal_vol in range(1, 21):
+        for focal_title in range(1, 51):
+            download_xml(focal_year, focal_title, focal_vol)
 
-for focal_vol in range(1, 21):
-    for focal_title in range(1, 51):
-        file_path = f"CFR{focal_year}/CFR{focal_year}-title{focal_title}-vol{focal_vol}"
-        delimiter = '<HD SOURCE="HED">PART'
-        split_xml_file(file_path, delimiter)
+for focal_year in range(1975, 2023):
+    for focal_vol in range(1, 21):
+        for focal_title in range(1, 51):
+            file_path = f"CFR{focal_year}/CFR{focal_year}-title{focal_title}-vol{focal_vol}"
+            delimiter = '<HD SOURCE="HED">PART'
+            split_xml_file(file_path, delimiter)
