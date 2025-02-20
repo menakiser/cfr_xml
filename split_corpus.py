@@ -3,6 +3,7 @@ import requests
 import os
 import pandas as pd
 import re
+import glob
 
 def download_xml(year, title, vol):
     URL = f"https://www.govinfo.gov/content/pkg/CFR-{year}-title{title}-vol{vol}/xml/CFR-{year}-title{title}-vol{vol}.xml"
@@ -35,16 +36,20 @@ def split_xml_file(file_path, delimiter):
         with open(output_file_path, 'w') as output_file:
             output_file.write(part)
         print(f"Created file: {output_file_path}")
+
 '''
-# execute for 2022
-for focal_year in range(1975, 2023):
-    for focal_vol in range(1, 21):
+for focal_year in range(1997, 2023):
         for focal_title in range(1, 51):
-            download_xml(focal_year, focal_title, focal_vol)
+            dir_path = f"CFR-{focal_year}/title-{focal_title}/"
+            file_pattern = os.path.join(dir_path, "*part*.xml")
+            xml_files = glob.glob(file_pattern)
+            
+            for file_path in xml_files:
+                os.remove(file_path)
 '''
 
-for focal_year in range(1997, 2022):
-    for focal_vol in range(1, 16):
+for focal_year in range(1997, 2023):
+    for focal_vol in range(1, 21):
         for focal_title in range(1, 51):
             file_path = f"CFR-{focal_year}/title-{focal_title}/CFR-{focal_year}-title{focal_title}-vol{focal_vol}"
             delimiter = '<HD SOURCE="HED">PART'
