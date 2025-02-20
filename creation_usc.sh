@@ -11,7 +11,14 @@
 #SBATCH --mail-type=ALL
 
 
-module load python/3.9.0
+module load python/anaconda3
+
+pip install --user re
+pip install --user pandas
+pip install --user glob
+pip install --user os
+pip install --user lxml
+pip install --user requests
 
 python3 split_corpus.py
 python3 read_xml.py
