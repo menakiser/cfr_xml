@@ -1,7 +1,7 @@
 #!/bin/bash
 #SBATCH --partition=standard
 #SBATCH --account=liegroup
-#SBATCH --job-name=dodge
+#SBATCH --job-name=splitxml
 #SBATCH --output=splitxml.log
 #
 #SBATCH --time=10:00:00
