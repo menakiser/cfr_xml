@@ -24,7 +24,7 @@ def read_xmlcontent(output_table, part_path, statutes_list):
     for _, row in statutes_list.iterrows():
         try:
             act_number = int(row["Act Number"])  # Convert act number to integer
-            usc_citation = str(row["USC Citation 2"])  # Ensure USC Citation is a string, ignore et seq. or note
+            usc_citation = str(row["USC Citation"])  # Ensure USC Citation is a string, ignore et seq. or note
 
             if 1 <= act_number <= 26 and pd.notna(usc_citation):
                 if re.search(re.escape(usc_citation), xml_content):
@@ -44,7 +44,7 @@ statutes_list = pd.read_csv('env_statutes.csv', skiprows=2)
 statutes_list.columns = statutes_list.iloc[0]
 statutes_list = statutes_list[1:].reset_index(drop=True)
 print(statutes_list.shape)
-print(statutes_list['USC Citation 2'])
+print(statutes_list['USC Citation'])
 
 # define output table
 USCcolumns = ["FileName", "FirstLine"] + [f"USCAct{str(i).zfill(2)}" for i in range(1, 27)]

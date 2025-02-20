@@ -1,38 +1,128 @@
-,,,,,,,,
-List of environmental statutes,,,,,,,,
-,,,,,,,,
-Act Number,Name of the Act,Act Abb.,Publication Code,Date,USC Citation Raw,Previous,USC Citation 1,USC Citation 2
-1,The National Environmental Policy Act,NEPA,"Pub. L. 91–190, 83 Stat. 852",1/1/1970,42 U.S.C. 4321 et seq.,0,42 U.S.C. 4321 et seq.,42 U.S.C. 4321
-2,Endangered Species Act,ESA,"Pub. L. 93–205, 87 Stat. 884",12/28/1973,16 U.S.C. 1531 et seq.,0,16 U.S.C. 1531 et seq.,16 U.S.C. 1531
-3,Federal Water Pollution Control Act,CWA,,,33 U.S.C. 1251 et seq.,0,33 U.S.C. 1251 et seq.,33 U.S.C. 1251
-4,National Historic Preservation Act,NHPA,"Pub. L. 89–665, 80 Stat. 915",10/15/1966,16 U.S.C. 470 et seq.,1,16 U.S.C. 470 et seq.,16 U.S.C. 470
-4,National Historic Preservation Act,NHPA,"Pub. L. 113–287, 128 Stat. 3094",12/19/2024,"54 U.S.C. 100101 note, 54 U.S.C. 300101 et seq.",0,54 U.S.C. 100101 note,54 U.S.C. 100101
-4,National Historic Preservation Act,NHPA,"Pub. L. 113–287, 128 Stat. 3094",12/19/2024,"54 U.S.C. 100101 note, 54 U.S.C. 300101 et seq.",0,54 U.S.C. 300101 et seq.,54 U.S.C. 300101
-5,Migratory Bird Treaty Act,MBTA,,,16 U.S.C. 703 et seq.,0,16 U.S.C. 703 et seq.,16 U.S.C. 703
-5,Migratory Bird Conservation Act,,,,16 U.S.C. 715 et seq.,0,16 U.S.C. 715 et seq.,16 U.S.C. 715
-6,Clean Air Act,CAA,,,42 U.S.C. 7401 et seq.,0,42 U.S.C. 7401 et seq.,42 U.S.C. 7401
-7,Archeological Resources Protection Act,ARPA,"Pub. L. 96–95, 93 Stat. 721",10/31/1979,16 U.S.C. 470aa et seq.,0,16 U.S.C. 470aa et seq.,16 U.S.C. 470aa
-8,Paleontological Resources Preservation Act,PRPA,,,16 U.S.C. 470aaa et seq.,0,16 U.S.C. 470aaa et seq.,16 U.S.C. 470aaa
-9,Safe Drinking Water Act,SDWA,,,42 U.S.C. 300f et seq.,0,42 U.S.C. 300f et seq.,42 U.S.C. 300f
-10,Noise Control Act,NCA,,,42 U.S.C. 4901 et seq.,0,42 U.S.C. 4901 et seq.,42 U.S.C. 4901
-11,Resource Conservation and Recovery Act,RCRA,,,42 U.S.C. 6901 et seq.,0,42 U.S.C. 6901 et seq.,42 U.S.C. 6901
-12,"Comprehensive Environmental Response, Compensation, and Liability Act",CERCLA,,,42 U.S.C. 9601 et seq.,0,42 U.S.C. 9601 et seq.,42 U.S.C. 9601
-13,Archaeological and Historic Preservation Act,AHPA,"Pub. L. 86–523, 74 Stat. 220",6/27/1960,16 U.S.C. 469 et seq.,1,16 U.S.C. 469 et seq.,16 U.S.C. 469
-14,Archaeological and Historic Preservation Act,AHPA,"Pub. L. 113–287, 128 Stat. 3094",12/19/2014,54 U.S.C. 312502 et seq.,0,54 U.S.C. 312502 et seq.,54 U.S.C. 312502
-15,Antiquities Act,,,,16 U.S.C. 431 et seq.,1,16 U.S.C. 431 et seq.,16 U.S.C. 431
-15,Antiquities Act,,,,54 U.S.C. 320301 et seq.,0,54 U.S.C. 320301 et seq.,54 U.S.C. 320301
-16,"Historic Sites, Buildings, and Antiquities Act",,,,16 U.S.C. 461 et seq.,1,16 U.S.C. 461 et seq.,16 U.S.C. 461
-16,"Historic Sites, Buildings, and Antiquities Act",,,,54 U.S.C. 3201–320303 & 320101–320106,0,54 U.S.C. 3201,54 U.S.C. 3201
-16,"Historic Sites, Buildings, and Antiquities Act",,,,54 U.S.C. 3201–320303 & 320101–320106,0,54 U.S.C. 3202,54 U.S.C. 3202
-16,"Historic Sites, Buildings, and Antiquities Act",,,,54 U.S.C. 3201–320303 & 320101–320106,0,54 U.S.C. 3203,54 U.S.C. 3203
-17,Farmland Protection Policy Act,FPPA,,,7 U.S.C. 4201 et seq.,0,7 U.S.C. 4201 et seq.,7 U.S.C. 4201
-18,National Wildlife Refuge System Administration Act,NWRSAA,"Pub. L. 89–669, 80 Stat. 926",10/15/1966,16 U.S.C. 668dd-668ee,0,16 U.S.C. 668dd,16 U.S.C. 668dd
-18,National Wildlife Refuge System Administration Act,NWRSAA,"Pub. L. 89–669, 80 Stat. 926",10/15/1966,16 U.S.C. 668dd-668ee,0,16 U.S.C. 668ee,16 U.S.C. 668ee
-19,National Fish and Wildlife Act of 1956,,"Pub. L. 84–1024, 70 Stat. 1119",8/8/1956,"16 U.S.C. 742a, et seq.",0,16 U.S.C. 742a et seq.,16 U.S.C. 742a
-20,Fish and Wildlife Coordination Act,,"Pub. L. 73–121, 48 Stat. 401",3/10/1934,16 U.S.C. 661 et seq.,0,16 U.S.C. 661 et seq.,16 U.S.C. 661
-21,National Trails System Act,NTSA,,,16 U.S.C. 1241 et seq.,0,16 U.S.C. 1241 et seq.,16 U.S.C. 1241
-22,Administrative Procedure Act,APA,,,5 U.S.C. 551 et seq.,0,5 U.S.C. 551 et seq.,5 U.S.C. 551
-23,Eagle Protection Act,,,,16 U.S.C. 668 et seq.,0,16 U.S.C. 668 et seq.,16 U.S.C. 668
-24,Native American Graves Protection and Repatriation Act,NAGPRA,,,25 U.S.C. 3001 et seq.,0,25 U.S.C. 3001 et seq.,25 U.S.C. 3001
-25,American Indian Religious Freedom Act,AIRFA,,,42 U.S.C. 1996,0,42 U.S.C. 1996,42 U.S.C. 1996
-26,Federal Land Policy and Management Act,FLPMA,"Pub. L. 94–579, 90 Stat. 2743",10/21/1976,43 U.S.C. 1701 et seq.,0,43 U.S.C. 1701 et seq.,43 U.S.C. 1701
+,,,,
+List of environmental statutes,,,,
+,,,,
+Act Number,Name of the Act,Act Abb.,USC Citation,Year
+1,American Innovation and Manufacturing Act (AIM),AIM,42 USC 7675,2020
+2,Atomic Energy Act (AEA),AEA,42 U.S.C. 2011,1946
+3,Beaches Environmental Assessment and Coastal Health (BEACH) Act,BEACH,33 U.S.C. 1313,2000
+4,Clean Air Act (CAA),CAA,42 U.S.C. 7401,1970
+5,Clean Water Act (CWA),CWA,33 U.S.C. 1251,1972
+6,"Comprehensive Environmental Response, Compensation and Liability Act (CERCLA, or Superfund)",CERCLA,42 U.S.C. 9601,1980
+7,Emergency Planning and Community Right-to-Know Act (EPCRA),EPCRA,42 U.S.C. 11001,1986
+8,Endangered Species Act (ESA),ESA,16 U.S.C. 1531,1973
+9,Energy Independence and Security Act (EISA),EISA,42 U.S.C. 17013,2007
+10,Energy Policy Act,EPA,42 USC 13201,2005
+11,"Federal Food, Drug, and Cosmetic Act (FFDCA)",FFDCA,21 U.S.C. 301,2002
+11,"Federal Food, Drug, and Cosmetic Act (FFDCA)",FFDCA,21 U.S.C. 321,2002
+11,"Federal Food, Drug, and Cosmetic Act (FFDCA)",FFDCA,21 U.S.C. 331,2002
+11,"Federal Food, Drug, and Cosmetic Act (FFDCA)",FFDCA,21 U.S.C. 332,2002
+11,"Federal Food, Drug, and Cosmetic Act (FFDCA)",FFDCA,21 U.S.C. 333,2002
+11,"Federal Food, Drug, and Cosmetic Act (FFDCA)",FFDCA,21 U.S.C. 334,2002
+11,"Federal Food, Drug, and Cosmetic Act (FFDCA)",FFDCA,21 U.S.C. 335,2002
+11,"Federal Food, Drug, and Cosmetic Act (FFDCA)",FFDCA,21 U.S.C. 336,2002
+11,"Federal Food, Drug, and Cosmetic Act (FFDCA)",FFDCA,21 U.S.C. 337,2002
+11,"Federal Food, Drug, and Cosmetic Act (FFDCA)",FFDCA,21 U.S.C. 341,2002
+11,"Federal Food, Drug, and Cosmetic Act (FFDCA)",FFDCA,21 U.S.C. 342,2002
+11,"Federal Food, Drug, and Cosmetic Act (FFDCA)",FFDCA,21 U.S.C. 343,2002
+11,"Federal Food, Drug, and Cosmetic Act (FFDCA)",FFDCA,21 U.S.C. 344,2002
+11,"Federal Food, Drug, and Cosmetic Act (FFDCA)",FFDCA,21 U.S.C. 345,2002
+11,"Federal Food, Drug, and Cosmetic Act (FFDCA)",FFDCA,21 U.S.C. 346,2002
+11,"Federal Food, Drug, and Cosmetic Act (FFDCA)",FFDCA,21 U.S.C. 347,2002
+11,"Federal Food, Drug, and Cosmetic Act (FFDCA)",FFDCA,21 U.S.C. 348,2002
+11,"Federal Food, Drug, and Cosmetic Act (FFDCA)",FFDCA,21 U.S.C. 349,2002
+11,"Federal Food, Drug, and Cosmetic Act (FFDCA)",FFDCA,21 U.S.C. 350,2002
+11,"Federal Food, Drug, and Cosmetic Act (FFDCA)",FFDCA,21 U.S.C. 351,2002
+11,"Federal Food, Drug, and Cosmetic Act (FFDCA)",FFDCA,21 U.S.C. 352,2002
+11,"Federal Food, Drug, and Cosmetic Act (FFDCA)",FFDCA,21 U.S.C. 353,2002
+11,"Federal Food, Drug, and Cosmetic Act (FFDCA)",FFDCA,21 U.S.C. 354,2002
+11,"Federal Food, Drug, and Cosmetic Act (FFDCA)",FFDCA,21 U.S.C. 355,2002
+11,"Federal Food, Drug, and Cosmetic Act (FFDCA)",FFDCA,21 U.S.C. 356,2002
+11,"Federal Food, Drug, and Cosmetic Act (FFDCA)",FFDCA,21 U.S.C. 357,2002
+11,"Federal Food, Drug, and Cosmetic Act (FFDCA)",FFDCA,21 U.S.C. 358,2002
+11,"Federal Food, Drug, and Cosmetic Act (FFDCA)",FFDCA,21 U.S.C. 359,2002
+11,"Federal Food, Drug, and Cosmetic Act (FFDCA)",FFDCA,21 U.S.C. 360,2002
+11,"Federal Food, Drug, and Cosmetic Act (FFDCA)",FFDCA,21 U.S.C. 361,2002
+11,"Federal Food, Drug, and Cosmetic Act (FFDCA)",FFDCA,21 U.S.C. 362,2002
+11,"Federal Food, Drug, and Cosmetic Act (FFDCA)",FFDCA,21 U.S.C. 363,2002
+11,"Federal Food, Drug, and Cosmetic Act (FFDCA)",FFDCA,21 U.S.C. 364,2002
+11,"Federal Food, Drug, and Cosmetic Act (FFDCA)",FFDCA,21 U.S.C. 371,2002
+11,"Federal Food, Drug, and Cosmetic Act (FFDCA)",FFDCA,21 U.S.C. 372,2002
+11,"Federal Food, Drug, and Cosmetic Act (FFDCA)",FFDCA,21 U.S.C. 373,2002
+11,"Federal Food, Drug, and Cosmetic Act (FFDCA)",FFDCA,21 U.S.C. 374,2002
+11,"Federal Food, Drug, and Cosmetic Act (FFDCA)",FFDCA,21 U.S.C. 375,2002
+11,"Federal Food, Drug, and Cosmetic Act (FFDCA)",FFDCA,21 U.S.C. 376,2002
+11,"Federal Food, Drug, and Cosmetic Act (FFDCA)",FFDCA,21 U.S.C. 377,2002
+11,"Federal Food, Drug, and Cosmetic Act (FFDCA)",FFDCA,21 U.S.C. 378,2002
+11,"Federal Food, Drug, and Cosmetic Act (FFDCA)",FFDCA,21 U.S.C. 379,2002
+11,"Federal Food, Drug, and Cosmetic Act (FFDCA)",FFDCA,21 U.S.C. 381,2002
+11,"Federal Food, Drug, and Cosmetic Act (FFDCA)",FFDCA,21 U.S.C. 382,2002
+11,"Federal Food, Drug, and Cosmetic Act (FFDCA)",FFDCA,21 U.S.C. 383,2002
+11,"Federal Food, Drug, and Cosmetic Act (FFDCA)",FFDCA,21 U.S.C. 384,2002
+11,"Federal Food, Drug, and Cosmetic Act (FFDCA)",FFDCA,21 U.S.C. 387,2002
+11,"Federal Food, Drug, and Cosmetic Act (FFDCA)",FFDCA,21 U.S.C. 391,2002
+11,"Federal Food, Drug, and Cosmetic Act (FFDCA)",FFDCA,21 U.S.C. 392,2002
+11,"Federal Food, Drug, and Cosmetic Act (FFDCA)",FFDCA,21 U.S.C. 393,2002
+11,"Federal Food, Drug, and Cosmetic Act (FFDCA)",FFDCA,21 U.S.C. 394,2002
+11,"Federal Food, Drug, and Cosmetic Act (FFDCA)",FFDCA,21 U.S.C. 395,2002
+11,"Federal Food, Drug, and Cosmetic Act (FFDCA)",FFDCA,21 U.S.C. 396,2002
+11,"Federal Food, Drug, and Cosmetic Act (FFDCA)",FFDCA,21 U.S.C. 397,2002
+11,"Federal Food, Drug, and Cosmetic Act (FFDCA)",FFDCA,21 U.S.C. 398,2002
+11,"Federal Food, Drug, and Cosmetic Act (FFDCA)",FFDCA,21 U.S.C. 399,2002
+12,"Federal Insecticide, Fungicide, and Rodenticide Act (FIFRA)",FIFRA,7 U.S.C. 136 ,1996
+13,"Marine Protection, Research, and Sanctuaries Act (MPRSA, also known as the Ocean Dumping Act)",MPRSA,16 USC 1431,1988
+13,"Marine Protection, Research, and Sanctuaries Act (MPRSA, also known as the Ocean Dumping Act)",MPRSA,33 USC 1401,1988
+14,National Environmental Policy Act (NEPA),NEPA,42 U.S.C. 4321,1970
+15,Noise Control Act,NCA,42 U.S.C. 4901,1972
+16,Nuclear Waste Policy Act (NWPA),NWPA,42 U.S.C. 10101,1982
+17,Oil Pollution Act (OPA),OPA,33 U.S.C. 2701,1990
+18,Pollution Prevention Act (PPA),PPA,42 U.S.C. 13101,1990
+19,Resource Conservation and Recovery Act (RCRA),RCRA,42 U.S.C. 6901,1976
+20,Safe Drinking Water Act (SDWA),SDWA,42 U.S.C. 300f,1974
+21,Shore Protection Act (SPA),SPA,33 U.S.C. 2601,1988
+22,Toxic Substances Control Act (TSCA),TSCA,15 U.S.C. 2601,1976
+23,Migratory Bird Treaty Act,MBTA,16 U.S.C. 703,1918
+23,Migratory Bird Treaty Act,MBTA,16 U.S.C. 704,1918
+23,Migratory Bird Treaty Act,MBTA,16 U.S.C. 705,1918
+23,Migratory Bird Treaty Act,MBTA,16 U.S.C. 706,1918
+23,Migratory Bird Treaty Act,MBTA,16 U.S.C. 707,1918
+23,Migratory Bird Treaty Act,MBTA,16 U.S.C. 708,1918
+23,Migratory Bird Treaty Act,MBTA,16 U.S.C. 709,1918
+23,Migratory Bird Treaty Act,MBTA,16 U.S.C. 710,1918
+23,Migratory Bird Treaty Act,MBTA,16 U.S.C. 711,1918
+23,Migratory Bird Treaty Act,MBTA,16 U.S.C. 712,1918
+24,Migratory Bird Conservation Act,MBCC,16 U.S.C. 715,1929
+25,Farmland Protection Policy Act,FPPA,7 U.S.C. 4201,1984
+25,Farmland Protection Policy Act,FPPA,7 U.S.C. 4202,1984
+25,Farmland Protection Policy Act,FPPA,7 U.S.C. 4203,1984
+25,Farmland Protection Policy Act,FPPA,7 U.S.C. 4204,1984
+25,Farmland Protection Policy Act,FPPA,7 U.S.C. 4205,1984
+25,Farmland Protection Policy Act,FPPA,7 U.S.C. 4206,1984
+25,Farmland Protection Policy Act,FPPA,7 U.S.C. 4207,1984
+25,Farmland Protection Policy Act,FPPA,7 U.S.C. 4208,1984
+25,Farmland Protection Policy Act,FPPA,7 U.S.C. 4209,1984
+26,National Wildlife Refuge System Administration Act,NWRSAA,16 U.S.C. 668dd,1966
+26,National Wildlife Refuge System Administration Act,NWRSAA,16 U.S.C. 668ee,1966
+27,National Fish and Wildlife Act of 1956,,16 U.S.C. 742,1956
+27,National Fish and Wildlife Act of 1956,,16 U.S.C. 743,1956
+27,National Fish and Wildlife Act of 1956,,16 U.S.C. 744,1956
+27,National Fish and Wildlife Act of 1956,,16 U.S.C. 745,1956
+27,National Fish and Wildlife Act of 1956,,16 U.S.C. 746,1956
+27,National Fish and Wildlife Act of 1956,,16 U.S.C. 747,1956
+27,National Fish and Wildlife Act of 1956,,16 U.S.C. 748,1956
+27,National Fish and Wildlife Act of 1956,,16 U.S.C. 749,1956
+27,National Fish and Wildlife Act of 1956,,16 U.S.C. 750,1956
+27,National Fish and Wildlife Act of 1956,,16 U.S.C. 751,1956
+27,National Fish and Wildlife Act of 1956,,16 U.S.C. 752,1956
+27,National Fish and Wildlife Act of 1956,,16 U.S.C. 753,1956
+27,National Fish and Wildlife Act of 1956,,16 U.S.C. 754,1956
+28,Fish and Wildlife Coordination Act,,16 U.S.C. 661,1934
+28,Fish and Wildlife Coordination Act,,16 U.S.C. 662,1934
+28,Fish and Wildlife Coordination Act,,16 U.S.C. 663,1934
+28,Fish and Wildlife Coordination Act,,16 U.S.C. 664,1934
+28,Fish and Wildlife Coordination Act,,16 U.S.C. 665,1934
+28,Fish and Wildlife Coordination Act,,16 U.S.C. 666,1934
+29,Eagle Protection Act,,16 U.S.C. 668,1940
+30,National Trails System Act,NTSA,16 U.S.C. 1241,1968
+,,,,
+,,,,
+"Source: EPA list of environmental laws, excluding NTTA and OSHA. Acts 23-30 were extracted from FR Doc. 2023–22176.",,,,
