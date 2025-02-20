@@ -2,7 +2,7 @@
 #SBATCH --partition=standard
 #SBATCH --account=liegroup
 #SBATCH --job-name=dodge
-#SBATCH --output=dodge_raw.log
+#SBATCH --output=splitxml.log
 #
 #SBATCH --time=10:00:00
 #SBATCH --mem=50G
