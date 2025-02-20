@@ -1,5 +1,7 @@
 import pandas as pd
 import re
+import glob
+import os
 
 def read_xmlcontent(output_table, part_path, statutes_list):
     try:
@@ -52,14 +54,15 @@ USCtable = pd.DataFrame(columns=USCcolumns)
 print(USCtable)
 
 # looking at 2022 volume 1 for now. there are up to 15 volumes this year. 50 titles
-for focal_year in range(1997, 2022):
-    for focal_vol in range(1, 16):
-        for focal_title in range(1, 51):
-           for focal_part in range(1, 246):
-                file_path = f"CFR-{focal_year}/title-{focal_title}/CFR-{focal_year}-title{focal_title}-vol{focal_vol}-part{focal_part}.xml"
-                USCtable = read_xmlcontent(USCtable, file_path, statutes_list)
-                USCtable.to_csv(f"CFR-{focal_year}/USCtable{focal_year}.csv", index=False)
+for focal_year in range(1997, 2023):
+    for focal_title in range(1, 51):
+        dir_path = f"CFR-{focal_year}/title-{focal_title}/"
+        file_pattern = os.path.join(dir_path, "*part*.xml")
+        xml_files = glob.glob(file_pattern)
 
+        for file_path in xml_files:
+            USCtable = read_xmlcontent(USCtable, file_path, statutes_list)
+            USCtable.to_csv(f"USCtable{focal_year}.csv", index=False)
 
 ''''
 for focal_year in range(1997, 2022):
@@ -69,4 +72,4 @@ for focal_year in range(1997, 2022):
                 file_path = f"CFR-{focal_year}/title-{focal_title}/CFR-{focal_year}-title{focal_title}-vol{focal_vol}-part{focal_part}.xml"
                 USCtable = read_xmlcontent(USCtable, file_path, statutes_list)
                 USCtable.to_csv(f"CFR-{focal_year}/USCtable{focal_year}.csv", index=False)
-''''
+'''''
