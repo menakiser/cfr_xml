@@ -47,9 +47,9 @@ for focal_year in range(1997, 2023):
             for file_path in xml_files:
                 os.remove(file_path)
 '''
-
+# loop through all years-title
 for focal_year in range(1997, 2023):
-    for focal_vol in range(1, 21):
+    for focal_vol in range(1, 38):
         for focal_title in range(1, 51):
             file_path = f"CFR-{focal_year}/title-{focal_title}/CFR-{focal_year}-title{focal_title}-vol{focal_vol}"
             delimiter = '<HD SOURCE="HED">PART'

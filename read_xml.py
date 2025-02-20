@@ -53,7 +53,7 @@ USCcolumns = ["FileName", "FirstLine"] + [f"USCAct{str(i).zfill(2)}" for i in ra
 USCtable = pd.DataFrame(columns=USCcolumns)
 print(USCtable)
 
-# looking at 2022 volume 1 for now. there are up to 15 volumes this year. 50 titles
+# loop through all *part*.xml files for each year-title folder
 for focal_year in range(1997, 2023):
     for focal_title in range(1, 51):
         dir_path = f"CFR-{focal_year}/title-{focal_title}/"

@@ -5,7 +5,7 @@ Clean 2022 USC Citation count and merge to RegData
 clear all
 cd "/Users/jimenakiser/liegroup Dropbox/Jimena Villanueva Kiser/cfr_env/cfr_xml/"
 
-import delimited using "CFR-2022/USCtable2022.csv", clear varnames(1)
+import delimited using "USCtables/USCtable2022.csv", clear varnames(1)
 
 drop if strpos(firstline, "NERS AND PARTNERSHIPS")
 split firstline, gen(pname) parse(—)
@@ -17,7 +17,6 @@ replace pname = "1" if pname1=="1-POSTAL"
 drop if pname == "S"
 
 rename pname1 partraw
-drop psubnames1 psubnames2 psubnames3 psubnames4
 replace partraw = strlower(partraw)
 split partraw , gen(subpart) parse(-)
 replace partraw = subpart1 if !mi(subpart2)
@@ -32,7 +31,8 @@ gen title = substr(filename, 16, 2)
 replace title = subinstr(title, "/", "" ,.)
 destring title, replace
 
-drop subpart1 subpart2 partstr
+drop psubnames1 psubnames2 psubnames3 psubnames4 subpart1 subpart2 partstr
+drop if mi(partraw) //firstline==<?xml version="1.0" encoding="UTF-8"?> 
 
 collapse (sum) uscact* , by(title partraw)
 order title partraw
@@ -55,8 +55,9 @@ save "2022_USC_count", replace
 use "2022_USC_count", clear 
 collapse (sum) citcount, by(title part year )
 
+count //7,821 documents
 tab citcount
-count if citcount>0 // about (644 parts) 8.31% of documents have some mention of an environmental act citation
+count if citcount>0 // about (687 parts) 8.78% of documents have some mention of an environmental act citation
 
 tempfile uscdocs
 save `uscdocs', replace
