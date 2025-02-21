@@ -55,16 +55,17 @@ print(USCtable)
 
 # loop through all *part*.xml files for each year-title folder
 #for focal_year in range(1997, 2023):
-for focal_year in range(1997, 2023):
+for focal_year in range(1997, 2023):  # Updated range to include 2022
     for focal_title in range(1, 51):
         dir_path = f"CFR-{focal_year}/title-{focal_title}/"
         file_pattern = os.path.join(dir_path, "*part*.xml")
-        xml_files = glob.glob(file_pattern)
+        xml_files = glob.glob(file_pattern)  # Get all matching XML files
 
         for file_path in xml_files:
             USCtable = read_xmlcontent(USCtable, file_path, statutes_list)
-    # Save only after all files for the year are processed
-    USCtable.to_csv(f"USCtables/USCtable1997_2022.csv", index=False)
+
+# Save only after all files from all years have been processed
+USCtable.to_csv(f"USCtables/USCtable1997_2022.csv", index=False)
 
 ''''
 for focal_year in range(1997, 2022):

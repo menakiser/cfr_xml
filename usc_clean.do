@@ -87,9 +87,44 @@ count if citcount>0 // about (860 parts) 10.60% of documents have some mention o
 
 
 
+// check other years
+import delimited using "USCtables/USCtable2013.csv", clear varnames(1)
+* verify file only includes only the corresponding year
+gen year = substr(filename, 5, 4)
+destring year, replace
+tempfile checkmiss
+save `checkmiss'
 
+forval yr  = 1997/2012 {
+	import delimited using "USCtables/USCtable`yr'.csv", clear varnames(1)
+	* verify file only includes only the corresponding year
+	gen year = substr(filename, 5, 4)
+	destring year, replace
+	merge 1:1 filename firstline using `checkmiss'
+	drop if _m!=3
+	
+}
 
+import delimited using "USCtables/USCtable2012.csv", clear varnames(1)
+* verify file only includes only the corresponding year
+gen year = substr(filename, 5, 4)
+destring year, replace
+tab year if year <2001
+import delimited using "USCtables/USCtable2000.csv", clear varnames(1)
+* verify file only includes only the corresponding year
+gen year = substr(filename, 5, 4)
+destring year, replace
+tab year
 
-
+import delimited using "USCtables/USCtable2009.csv", clear varnames(1)
+* verify file only includes only the corresponding year
+gen year = substr(filename, 5, 4)
+destring year, replace
+tab year if year <2006
+import delimited using "USCtables/USCtable2005.csv", clear varnames(1)
+* verify file only includes only the corresponding year
+gen year = substr(filename, 5, 4)
+destring year, replace
+tab year
 
 
