@@ -46,7 +46,7 @@ forval i = 1/9 {
 	rename uscact0`i' uscact`i'
 }
 
-reshape long uscact , i(title partraw) j(ActNumber)
+reshape long uscact , i(title partraw year) j(ActNumber)
 rename uscact citcount 
 
 isid title part ActNumber
