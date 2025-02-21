@@ -39,7 +39,13 @@ destring title, replace
 drop psubnames1 psubnames2 psubnames3 psubnames4 subpart1 subpart2 partstr
 drop if mi(partraw) //firstline==<?xml version="1.0" encoding="UTF-8"?> 
 
-collapse (sum) uscact* , by(title partraw)
+sum
+isid title partraw
+bys title partraw: gen orderdoc = _N
+tab orderdoc
+// some parts are continued, other include subparts
+collapse (sum) uscact* , by(title partraw year)
+count // 8,111 documents
 order title partraw
 
 forval i = 1/9 {
@@ -59,19 +65,12 @@ save "2022_USC_count", replace
 use "2022_USC_count", clear 
 collapse (sum) citcount, by(title part year )
 
-count //7,821 documents
+count // 8,111 documents
 tab citcount
-count if citcount>0 // about (687 parts) 8.78% of documents have some mention of an environmental act citation
+count if citcount>0 // about (862 parts) 10.16% of documents have some mention of an environmental act citation
 
 tempfile uscdocs
 save `uscdocs', replace
-
-
-* pull regdata 2022 
-use if year == 2022 using "/Users/jimenakiser/liegroup Dropbox/Jimena Villanueva Kiser/NEPA/crosswalk250207/naics_docs_1970_2022.dta"
-
-merge m:1 title part using `uscdocs', nogen keep( 3) //master 75,080, using 5, matched 951,962
-
 
 
 * count unique documents in RegData 5.0 2022:
@@ -79,5 +78,18 @@ import delimited using "/Users/jimenakiser/liegroup Dropbox/Jimena Villanueva Ki
 keep if year ==2022
 drop if strpos(document_reference, "Partition")!=0
 count 
+isid title part
+merge 1:1 title part using `uscdocs', nogen keep( 3) //matched: 8,105. master:516. using:6.
+
+count 
+count if citcount>0 // about (860 parts) 10.60% of documents have some mention of an environmental act citation
+
+
+
+
+
+
+
+
 
 
