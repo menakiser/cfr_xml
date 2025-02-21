@@ -66,7 +66,7 @@ tab year //8,111 in 2022
 
 tab citcount
 count if citcount>0 // about (687 parts) 8.78% of documents have some mention of an environmental act citation
-
+isid title part year
 tempfile uscdocs
 save `uscdocs', replace
 
@@ -78,9 +78,9 @@ drop if strpos(document_reference, "Partition")!=0
 egen docyrtag = tag( document_reference year)
 tab docyrtag
 
-merge m:1 title part using `uscdocs'
+merge m:1 title part year using `uscdocs'
+ereplace docyrtag = tag( document_reference year _m )
+tab docyrtag _m
 
-
-, nogen keep( 3) //master 75,080, using 5, matched 951,962
 
 
