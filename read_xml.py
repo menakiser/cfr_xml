@@ -19,7 +19,7 @@ def read_xmlcontent(output_table, part_path, statutes_list):
     working_row = {'FileName': part_path, 'FirstLine': first_line}
 
     # Initialize all USCAct columns to 0
-    for i in range(1, 27):
+    for i in range(1, 31):
         working_row[f'USCAct{str(i).zfill(2)}'] = 0
 
     # Iterate through statutes_list DataFrame to check for citations in xml_content
@@ -49,7 +49,7 @@ print(statutes_list.shape)
 print(statutes_list['USC Citation'])
 
 # define output table
-USCcolumns = ["FileName", "FirstLine"] + [f"USCAct{str(i).zfill(2)}" for i in range(1, 27)]
+USCcolumns = ["FileName", "FirstLine"] + [f"USCAct{str(i).zfill(2)}" for i in range(1, 31)]
 USCtable = pd.DataFrame(columns=USCcolumns)
 print(USCtable)
 

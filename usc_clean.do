@@ -3,10 +3,13 @@ Clean 2022 USC Citation count and merge to RegData
 
 ----------------------------------------------------*/
 clear all
-cd "/Users/jimenakiser/liegroup Dropbox/Jimena Villanueva Kiser/cfr_env/cfr_xml/"
+cd "/Users/jimenakiser/liegroup Dropbox/Jimena Villanueva Kiser/cfr_xml/"
 
 // 2022
 import delimited using "USCtables/USCtable2022.csv", clear varnames(1)
+* verify file only includes only the corresponding year
+gen year = substr(filename, 5, 4)
+destring year, replace
 
 drop if strpos(firstline, "NERS AND PARTNERSHIPS")
 split firstline, gen(pname) parse(—)
