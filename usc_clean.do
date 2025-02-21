@@ -10,6 +10,7 @@ import delimited using "USCtables/USCtable2022.csv", clear varnames(1)
 * verify file only includes only the corresponding year
 gen year = substr(filename, 5, 4)
 destring year, replace
+tab year
 
 drop if strpos(firstline, "NERS AND PARTNERSHIPS")
 split firstline, gen(pname) parse(—)
@@ -50,7 +51,6 @@ rename uscact citcount
 
 isid title part ActNumber
 sort title part ActNumber
-gen year = 2022
 rename partraw part
 
 compress 

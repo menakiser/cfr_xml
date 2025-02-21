@@ -6,8 +6,13 @@ for all years 1997-2009 (for now)
 clear all
 cd "/Users/jimenakiser/liegroup Dropbox/Jimena Villanueva Kiser/cfr_xml/"
 
-// 2022
+// 2009
 import delimited using "USCtables/USCtable2009.csv", clear varnames(1)
+
+* verify file only includes only the corresponding year
+gen year = substr(filename, 5, 4)
+destring year, replace
+tab year
 
 drop if strpos(firstline, "NERS AND PARTNERSHIPS")
 split firstline, gen(pname) parse(—)
@@ -34,6 +39,8 @@ replace title = subinstr(title, "/", "" ,.)
 destring title, replace
 
 drop psubnames1 psubnames2 psubnames3 psubnames4 subpart1 subpart2 partstr
+tab firstline if mi(partraw)
+tab year if mi(partraw) & strpos(firstline, "<?xml")==0
 drop if mi(partraw) //firstline==<?xml version="1.0" encoding="UTF-8"?> 
 
 collapse (sum) uscact* , by(title partraw)
@@ -48,7 +55,6 @@ rename uscact citcount
 
 isid title part ActNumber
 sort title part ActNumber
-gen year = 2022
 rename partraw part
 
 compress 
@@ -74,6 +80,11 @@ merge m:1 title part using `uscdocs', nogen keep( 3) //master 75,080, using 5, m
 
 * count unique documents in RegData 5.0 2022:
 import delimited using "/Users/jimenakiser/liegroup Dropbox/Jimena Villanueva Kiser/NEPA/crosswalk250207/RegData-US_5-0/usregdata5.csv", clear
+keep if year ==1997
+keep if title == 48
+sort part
+
+
 keep if year ==2022
 drop if strpos(document_reference, "Partition")!=0
 count 
