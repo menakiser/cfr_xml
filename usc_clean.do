@@ -87,7 +87,7 @@ count if citcount>0 // about (860 parts) 10.60% of documents have some mention o
 
 
 
-// check other years
+// check all years are present
 import delimited using "USCtables/USCtable2013.csv", clear varnames(1)
 * verify file only includes only the corresponding year
 gen year = substr(filename, 5, 4)
@@ -95,36 +95,60 @@ destring year, replace
 tempfile checkmiss
 save `checkmiss'
 
-forval yr  = 1997/2012 {
+forval yr  = 1997/2022 {
 	import delimited using "USCtables/USCtable`yr'.csv", clear varnames(1)
 	* verify file only includes only the corresponding year
 	gen year = substr(filename, 5, 4)
 	destring year, replace
-	merge 1:1 filename firstline using `checkmiss'
-	drop if _m!=3
-	
+	merge 1:1 filename using `checkmiss'
+	rename _m m`yr'
+	save `checkmiss', replace
+}
+use `checkmiss', clear
+sum m* // all matched
+gen matched = 0
+forval yr  = 1997/2012 {
+	replace matched = 1 if m`yr' == 3 & matched==0
+}
+tab year matched // should be only the last
+
+// do all files report the same information? yes
+forval comp  = 1997/2013 {
+	clear all
+	import delimited using "USCtables/USCtable`comp'.csv", clear varnames(1)
+	* verify file only includes only the corresponding year
+	gen year = substr(filename, 5, 4)
+	destring year, replace
+	tempfile checkmiss13
+	save `checkmiss13'
+
+		forval yr  = 1997/2013 {
+			import delimited using "USCtables/USCtable`yr'.csv", clear varnames(1)
+			* verify file only includes only the corresponding year
+			gen year = substr(filename, 5, 4)
+			destring year, replace
+			forval act  = 1/9 {
+				rename uscact0`act' oguscact`act'
+			}
+			forval act  =10/30 {
+				rename uscact`act' oguscact`act'
+			}
+			
+			merge 1:1 filename using `checkmiss13', nogen keep(3)
+			forval act  = 1/9 {
+				rename uscact0`act' uscact`act'
+			}
+			forval act = 1 /30 {
+				assert uscact`act' ==oguscact`act'
+			}
+		}
 }
 
-import delimited using "USCtables/USCtable2012.csv", clear varnames(1)
-* verify file only includes only the corresponding year
-gen year = substr(filename, 5, 4)
-destring year, replace
-tab year if year <2001
-import delimited using "USCtables/USCtable2000.csv", clear varnames(1)
-* verify file only includes only the corresponding year
-gen year = substr(filename, 5, 4)
-destring year, replace
-tab year
 
-import delimited using "USCtables/USCtable2009.csv", clear varnames(1)
-* verify file only includes only the corresponding year
-gen year = substr(filename, 5, 4)
-destring year, replace
-tab year if year <2006
-import delimited using "USCtables/USCtable2005.csv", clear varnames(1)
-* verify file only includes only the corresponding year
-gen year = substr(filename, 5, 4)
-destring year, replace
-tab year
+clear all
+import delimited using "USCtable1997_2022.csv", clear varnames(1)
+
+
+
 
 
