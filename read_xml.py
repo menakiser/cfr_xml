@@ -54,7 +54,8 @@ USCtable = pd.DataFrame(columns=USCcolumns)
 print(USCtable)
 
 # loop through all *part*.xml files for each year-title folder
-for focal_year in range(1997, 2023):
+#for focal_year in range(1997, 2023):
+for focal_year in range(2009, 2023):
     for focal_title in range(1, 51):
         dir_path = f"CFR-{focal_year}/title-{focal_title}/"
         file_pattern = os.path.join(dir_path, "*part*.xml")
