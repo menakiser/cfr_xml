@@ -28,7 +28,7 @@ def read_xmlcontent(output_table, part_path, statutes_list):
             act_number = int(row["Act Number"])  # Convert act number to integer
             usc_citation = str(row["USC Citation"])  # Ensure USC Citation is a string, ignore et seq. or note
 
-            if 1 <= act_number <= 26 and pd.notna(usc_citation):
+            if 1 <= act_number <= 30 and pd.notna(usc_citation): # replace using max act number
                 if re.search(re.escape(usc_citation), xml_content):
                     working_row[f'USCAct{str(act_number).zfill(2)}'] += 1  # Mark as found
         except (ValueError, KeyError):
@@ -55,7 +55,7 @@ print(USCtable)
 
 # loop through all *part*.xml files for each year-title folder
 #for focal_year in range(1997, 2023):
-for focal_year in range(2009, 2023):
+for focal_year in range(2022, 2023):
     for focal_title in range(1, 51):
         dir_path = f"CFR-{focal_year}/title-{focal_title}/"
         file_pattern = os.path.join(dir_path, "*part*.xml")

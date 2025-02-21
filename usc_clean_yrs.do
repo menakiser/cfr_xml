@@ -1,12 +1,13 @@
 /*----------------------------------------------------
-Clean 2022 USC Citation count and merge to RegData
-
+Clean USC Citation count and merge to RegData
+for all years 1997-2009 (for now)
+02/21/25
 ----------------------------------------------------*/
 clear all
-cd "/Users/jimenakiser/liegroup Dropbox/Jimena Villanueva Kiser/cfr_env/cfr_xml/"
+cd "/Users/jimenakiser/liegroup Dropbox/Jimena Villanueva Kiser/cfr_xml/"
 
 // 2022
-import delimited using "USCtables/USCtable2022.csv", clear varnames(1)
+import delimited using "USCtables/USCtable2009.csv", clear varnames(1)
 
 drop if strpos(firstline, "NERS AND PARTNERSHIPS")
 split firstline, gen(pname) parse(—)
