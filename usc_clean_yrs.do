@@ -6,8 +6,8 @@ for all years 1997-2009 (for now)
 clear all
 cd "/Users/jimenakiser/liegroup Dropbox/Jimena Villanueva Kiser/cfr_xml/"
 
-// 2009
-import delimited using "USCtables/USCtable2009.csv", clear varnames(1)
+
+import delimited using "USCtable1997_2022.csv", clear varnames(1)
 
 * verify file only includes only the corresponding year
 gen year = substr(filename, 5, 4)
@@ -41,29 +41,29 @@ destring title, replace
 drop psubnames1 psubnames2 psubnames3 psubnames4 subpart1 subpart2 partstr
 tab firstline if mi(partraw)
 tab year if mi(partraw) & strpos(firstline, "<?xml")==0
-drop if mi(partraw) //firstline==<?xml version="1.0" encoding="UTF-8"?> 
+drop if mi(partraw) //firstline==<?xml version="1.0" encoding="UTF-8"?> or appendix lines
 
-collapse (sum) uscact* , by(title partraw)
+collapse (sum) uscact* , by(title partraw year)
 order title partraw
 
 forval i = 1/9 {
 	rename uscact0`i' uscact`i'
 }
 
-reshape long uscact , i(title partraw) j(ActNumber)
+reshape long uscact , i(title partraw year) j(ActNumber)
 rename uscact citcount 
 
-isid title part ActNumber
+isid title part ActNumber year
 sort title part ActNumber
 rename partraw part
 
 compress 
-save "2022_USC_count", replace
+save "USC_count_1997_2022", replace
 
-use "2022_USC_count", clear 
+use "USC_count_1997_2022", clear 
 collapse (sum) citcount, by(title part year )
+tab year //8,111 in 2022
 
-count //7,821 documents
 tab citcount
 count if citcount>0 // about (687 parts) 8.78% of documents have some mention of an environmental act citation
 
@@ -71,22 +71,16 @@ tempfile uscdocs
 save `uscdocs', replace
 
 
-* pull regdata 2022 
-use if year == 2022 using "/Users/jimenakiser/liegroup Dropbox/Jimena Villanueva Kiser/NEPA/crosswalk250207/naics_docs_1970_2022.dta"
-
-merge m:1 title part using `uscdocs', nogen keep( 3) //master 75,080, using 5, matched 951,962
-
-
-
-* count unique documents in RegData 5.0 2022:
-import delimited using "/Users/jimenakiser/liegroup Dropbox/Jimena Villanueva Kiser/NEPA/crosswalk250207/RegData-US_5-0/usregdata5.csv", clear
-keep if year ==1997
-keep if title == 48
-sort part
-
-
-keep if year ==2022
+* pull regdata 1997-2022 
+use if year<=2022 & year>=1997 using "/Users/jimenakiser/liegroup Dropbox/Jimena Villanueva Kiser/NEPA/crosswalk250207/naics_docs_1970_2022.dta"
 drop if strpos(document_reference, "Partition")!=0
-count 
+
+egen docyrtag = tag( document_reference year)
+tab docyrtag
+
+merge m:1 title part using `uscdocs'
+
+
+, nogen keep( 3) //master 75,080, using 5, matched 951,962
 
 
