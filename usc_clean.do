@@ -70,7 +70,10 @@ merge m:1 title part using `uscdocs', nogen keep( 3) //master 75,080, using 5, m
 
 
 
-
-
+* count unique documents in RegData 5.0 2022:
+import delimited using "/Users/jimenakiser/liegroup Dropbox/Jimena Villanueva Kiser/NEPA/crosswalk250207/RegData-US_5-0/usregdata5.csv", clear
+keep if year ==2022
+drop if strpos(document_reference, "Partition")!=0
+count 
 
 
