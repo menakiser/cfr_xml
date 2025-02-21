@@ -64,7 +64,7 @@ for focal_year in range(1997, 2023):
         for file_path in xml_files:
             USCtable = read_xmlcontent(USCtable, file_path, statutes_list)
     # Save only after all files for the year are processed
-    USCtable.to_csv(f"USCtables/USCtable{focal_year}.csv", index=False)
+    USCtable.to_csv(f"USCtables/USCtable1997_2022.csv", index=False)
 
 ''''
 for focal_year in range(1997, 2022):
