@@ -49,7 +49,7 @@ print(statutes_list.shape)
 print(statutes_list['USC Citation'])
 
 # define output table
-USCcolumns = ["FileName", "FirstLine"] + [f"USCAct{str(i).zfill(2)}" for i in range(1, 31)]
+USCcolumns = ["FileName", "FirstLine"] + [f"USCAct{str(i).zfill(2)}" for i in range(1, 27)]
 USCtable = pd.DataFrame(columns=USCcolumns)
 print(USCtable)
 
@@ -63,9 +63,8 @@ for focal_year in range(1997, 2023):  # Updated range to include 2022
 
         for file_path in xml_files:
             USCtable = read_xmlcontent(USCtable, file_path, statutes_list)
-
-# Save only after all files from all years have been processed
-USCtable.to_csv(f"USCtable1997_2022perm.csv", index=False)
+    #save one year at a time
+    USCtable.to_csv(f"USCtable1997_2022perm.csv", index=False)
 
 ''''
 for focal_year in range(1997, 2022):
