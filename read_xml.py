@@ -19,7 +19,7 @@ def read_xmlcontent(output_table, part_path, statutes_list):
     working_row = {'FileName': part_path, 'FirstLine': first_line}
 
     # Initialize all USCAct columns to 0
-    for i in range(1, 31):
+    for i in range(1, 27):  # change for ACT NUMBER
         working_row[f'USCAct{str(i).zfill(2)}'] = 0
 
     # Iterate through statutes_list DataFrame to check for citations in xml_content
@@ -28,7 +28,7 @@ def read_xmlcontent(output_table, part_path, statutes_list):
             act_number = int(row["Act Number"])  # Convert act number to integer
             usc_citation = str(row["USC Citation"])  # Ensure USC Citation is a string, ignore et seq. or note
 
-            if 1 <= act_number <= 30 and pd.notna(usc_citation): # replace using max act number
+            if 1 <= act_number <= 26 and pd.notna(usc_citation): # change for ACT NUMBER
                 if re.search(re.escape(usc_citation), xml_content):
                     working_row[f'USCAct{str(act_number).zfill(2)}'] += 1  # Mark as found
         except (ValueError, KeyError):
@@ -41,8 +41,8 @@ def read_xmlcontent(output_table, part_path, statutes_list):
 
 
 
-# obtain list of envrironmental statutes
-statutes_list = pd.read_csv('env_statutes.csv', skiprows=2)
+# obtain list of permitting statutes
+statutes_list = pd.read_csv('perm_statutes.csv', skiprows=2)
 statutes_list.columns = statutes_list.iloc[0]
 statutes_list = statutes_list[1:].reset_index(drop=True)
 print(statutes_list.shape)
@@ -65,7 +65,7 @@ for focal_year in range(1997, 2023):  # Updated range to include 2022
             USCtable = read_xmlcontent(USCtable, file_path, statutes_list)
 
 # Save only after all files from all years have been processed
-USCtable.to_csv(f"USCtable1997_2022.csv", index=False)
+USCtable.to_csv(f"USCtable1997_2022perm.csv", index=False)
 
 ''''
 for focal_year in range(1997, 2022):
