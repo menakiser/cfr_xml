@@ -18,5 +18,6 @@ cap file close sumstat
 file open sumstat using "/Users/jimenakiser/liegroup Dropbox/Jimena Villanueva Kiser/cfr_xml/mean1.tex", write replace
 sum value_B
 local valuemean = r(mean)
-file write sumstat "\\newcommand{{\\MeanValue}}{{{mean_value:.2f}}}"
+
+file write sumstat "\newcommand{\MeanValue}{ `valuemean' }"
 file close sumstat
