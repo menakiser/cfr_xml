@@ -12,6 +12,11 @@ collapse (sum) value_B, by(state first_year)
 
 twoway (hist value_B, frequency), xtitle("") ytitle("") title("Construction Investment (B) by State and Year")
 graph export "/Users/jimenakiser/liegroup Dropbox/Jimena Villanueva Kiser/cfr_xml/histinv.jpg", replace
+
+* store mean of distribution
+cap file close sumstat
+file open sumstat using "/Users/jimenakiser/liegroup Dropbox/Jimena Villanueva Kiser/cfr_xml/mean1.tex", write replace
 sum value_B
 local valuemean = r(mean)
-di "The average"
+file write sumstat "`valuemean'" _n
+file close sumstat
