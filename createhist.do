@@ -17,7 +17,8 @@ graph export "/Users/jimenakiser/liegroup Dropbox/Jimena Villanueva Kiser/cfr_xm
 cap file close sumstat
 file open sumstat using "/Users/jimenakiser/liegroup Dropbox/Jimena Villanueva Kiser/cfr_xml/mean1.tex", write replace
 sum value_B
-local valuemean = r(mean)
-
+local valuemean = string(r(mean), "%9.2f")
+local valuesd = string(r(sd), "%9.2f")
 file write sumstat "\newcommand{\MeanValue}{ `valuemean' }"
+file write sumstat "\newcommand{\SD}{ `valuesd' }"
 file close sumstat
