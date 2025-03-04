@@ -10,8 +10,8 @@ keep if !missing(value_000s)
 gen value_B = value_000s/1000000
 collapse (sum) value_B, by(state first_year)
 
-twoway (hist value_B, frequency), xtitle("") ytitle("") title("Construction Investment (\$B) by State and Year")
-
+twoway (hist value_B, frequency), xtitle("") ytitle("") title("Construction Investment (B) by State and Year")
+graph export "/Users/jimenakiser/liegroup Dropbox/Jimena Villanueva Kiser/cfr_xml/histinv.jpg", replace
 sum value_B
 local valuemean = r(mean)
 di "The average"
